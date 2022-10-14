@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751142741745",
+    "project_id": "fir-master-class-f7e61",
+    "storage_bucket": "fir-master-class-f7e61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751142741745:android:1973c8afbea70433c02b50",
+        "android_client_info": {
+          "package_name": "com.example.firebase_master_class"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751142741745-draanr8in0qqg7nctjbf01ruveu2brg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgf43xRWqFbqT8M7kSEDcd21xXj9TPJTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751142741745-draanr8in0qqg7nctjbf01ruveu2brg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
