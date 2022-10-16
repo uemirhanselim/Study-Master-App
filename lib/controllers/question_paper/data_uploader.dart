@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_master_class/firebase_ref/references.dart';
 import 'package:firebase_master_class/models/question_paper_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -32,5 +33,16 @@ class DataUploader extends GetxController {
     }
     // print('Items number ${questionPapers[0].id}');
     final batch = firestore.batch();
+    for (var paper in questionPapers) {
+      batch.set(questionPaperRF.doc(paper.id), {
+        "title": paper.title,
+        "image_url": paper.imageUrl,
+        "description": paper.description,
+        "time_seconds": paper.timeSeconds,
+        "questions_count":
+            paper.questions == null ? 0 : paper.questions!.length,
+      });
+    }
+    await batch.commit();
   }
 }
