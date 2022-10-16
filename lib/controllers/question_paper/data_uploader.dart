@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:firebase_master_class/models/question_paper_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -21,9 +22,12 @@ class DataUploader extends GetxController {
         .where((path) =>
             path.startsWith("assets/DB/papers") && path.contains(".json"))
         .toList();
+    List<QuestionPaperModel> questionPapers = [];
     for (var paper in papersInAssets) {
       String stringPaperContent = await rootBundle.loadString(paper);
-      print(stringPaperContent);
+      questionPapers
+          .add(QuestionPaperModel.fromJson(json.decode(stringPaperContent)));
     }
+    // print('Items number ${questionPapers[0].id}');
   }
 }
