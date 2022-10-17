@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_master_class/firebase_ref/loading_status.dart';
 import 'package:firebase_master_class/firebase_ref/references.dart';
 import 'package:firebase_master_class/models/question_paper_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +17,12 @@ class DataUploader extends GetxController {
     super.onReady();
   }
 
+  final loadingStatus =
+      LoadingStatus.loading.obs; // loadingStatus is observable with obs keyword
+
   Future<void> uploadData() async {
+    loadingStatus.value = LoadingStatus.loading; // 0
+
     final firestore = FirebaseFirestore.instance;
     final manifestContent = await DefaultAssetBundle.of(Get.context!)
         .loadString("AssetManifest.json");
@@ -61,5 +67,6 @@ class DataUploader extends GetxController {
     }
 
     await batch.commit();
+    loadingStatus.value = LoadingStatus.completed;
   }
 }
