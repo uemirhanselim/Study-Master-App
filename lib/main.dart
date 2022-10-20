@@ -1,5 +1,9 @@
+import 'package:firebase_master_class/routes/app_routes.dart';
+import 'package:firebase_master_class/view/introduction/introduction_view.dart';
 import 'package:firebase_master_class/view/splash/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +14,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      getPages: AppRoutes.routes(),
     );
   }
 }
