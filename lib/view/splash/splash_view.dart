@@ -6,8 +6,11 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Image.asset("assets/images/app_splash_logo.png"), //TODO: change splash image later
+      body: Center(
+        child: Container(
+          child: Image.asset(
+              "assets/images/app_splash_logo.png"), //TODO: change splash image later
+        ),
       ),
     );
   }
