@@ -1,3 +1,4 @@
+import 'package:firebase_master_class/bindings/initial_bindings.dart';
 import 'package:firebase_master_class/routes/app_routes.dart';
 import 'package:firebase_master_class/view/introduction/introduction_view.dart';
 import 'package:firebase_master_class/view/splash/splash_view.dart';
@@ -6,6 +7,8 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  InitialBindings().dependencies();
   runApp(const MyApp());
 }
 
