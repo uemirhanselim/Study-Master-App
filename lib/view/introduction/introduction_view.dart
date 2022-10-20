@@ -1,3 +1,4 @@
+import 'package:firebase_master_class/helpers/themes/app_colors.dart';
 import 'package:firebase_master_class/widgets/app_circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +11,7 @@ class IntroductionView extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
+          decoration: BoxDecoration(gradient: mainGradient(context)),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: Get.width * 0.2),
             child: Column(
