@@ -20,11 +20,16 @@ class IntroductionView extends StatelessWidget {
                 const Icon(
                   Icons.star,
                   size: 65,
-                  color: Colors.amber,
                 ),
                 const SizedBox(height: 40),
                 const Text(
-                    'This is a study app. You can use it as you want. If you understand how this works, you would be able to scale it'),
+                  'This is a study app. You can use it as you want. If you understand how this works, you would be able to scale it',
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: onSurfaceTextColor,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
                 const SizedBox(height: 40),
                 AppCircleButton(
                   onTap: () => null,
