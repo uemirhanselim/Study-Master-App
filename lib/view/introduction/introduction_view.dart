@@ -32,7 +32,9 @@ class IntroductionView extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
                 AppCircleButton(
-                  onTap: () => null,
+                  onTap: () {
+                    Get.offAllNamed("/home");
+                  },
                   child: const Icon(Icons.arrow_forward, size: 35),
                 ),
               ],

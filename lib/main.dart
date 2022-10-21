@@ -1,9 +1,8 @@
 import 'package:firebase_master_class/bindings/initial_bindings.dart';
-import 'package:firebase_master_class/helpers/themes/app_light_theme.dart';
+import 'package:firebase_master_class/controllers/theme_controller.dart';
 import 'package:firebase_master_class/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: LightTheme().buildLightTheme(),
+      theme: Get.find<ThemeController>().darkTheme,
       getPages: AppRoutes.routes(),
     );
   }
