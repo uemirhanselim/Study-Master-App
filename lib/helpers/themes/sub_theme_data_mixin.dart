@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 mixin SubThemeData {
-  TextTheme getTextThemes() {
+  TextTheme getTextTheme() {
     return GoogleFonts.quicksandTextTheme(const TextTheme(
         bodyText1: TextStyle(
           fontWeight: FontWeight.w400,
