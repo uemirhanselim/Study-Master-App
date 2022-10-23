@@ -23,8 +23,8 @@ class QuestionPaperModel {
         title = json['title'] as String,
         imageUrl = json['image_url'] as String,
         description = json['Description'] as String,
-        questionCount = 0,
         timeSeconds = json['time_seconds'],
+        questionCount = 0,
         questions = (json['questions'] as List)
             .map((dynamic e) => Questions.fromJson(e as Map<String, dynamic>))
             .toList();
@@ -33,9 +33,9 @@ class QuestionPaperModel {
       : id = json.id,
         title = json['title'],
         imageUrl = json['image_url'],
-        questionCount = json['question_count'] as int,
         description = json['Description'],
         timeSeconds = json['time_seconds'],
+        questionCount = json['questions_count'] as int,
         questions = [];
 
   Map<String, dynamic> toJson() {
