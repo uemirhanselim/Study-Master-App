@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionPaperController questionPaperController = Get.find();
     return Scaffold(
-      body: ListView.separated(
+      body: Obx(() => ListView.separated(
           itemBuilder: (context, index) {
             return ClipRRect(
               child: SizedBox(
@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
             );
           },
           separatorBuilder: (context, index) => const SizedBox(height: 20),
-          itemCount: questionPaperController.allPaperImages.length),
+          itemCount: questionPaperController.allPaperImages.length),),
     );
   }
 }
