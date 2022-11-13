@@ -33,7 +33,7 @@ class QuestionPaperModel {
       : id = json.id,
         title = json['title'],
         imageUrl = json['image_url'],
-        description = json['Description'],
+        description = json['description'],
         timeSeconds = json['time_seconds'],
         questionCount = json['questions_count'] as int,
         questions = [];

@@ -16,13 +16,10 @@ class QuestionPaperController extends GetxController {
 
   Future<void> getAllPapers() async {
     try {
-      print("HELLLLOOOOOOO          1");
       QuerySnapshot<Map<String, dynamic>> data = await questionPaperRF.get();
-      print("HELLLLOOOOOO            2" );
       final paperList = data.docs
           .map((paper) => QuestionPaperModel.fromSnapshot(paper))
           .toList();
-      print("HELLLLOOOOOOO      3");
       allPapers.assignAll(paperList);
 
       for (var paper in paperList) {
